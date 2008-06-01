@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html;
+  charset=utf-8" />
+  <title>Hartmut - <%= @title || "Unknown" %></title>
+  <%= stylesheet_link_tag 'global' %>
+</head>
+
+<body>
+  <div id="container">
+    <div id="header">
+      <h1>Hartmut is gonna rock your World!</h1>
+    </div>
+    <div id="navigation">
+      <%= link_to ("Bestellungen", :controller => "orders", :action => "index") %>
+      <%= link_to ("Abteilungen", :controller => "departments", :action => "index") %>
+      <%= link_to ("Artikel", :controller => "articles", :action => "index") %>
+      <%= link_to ("Lieferanten", :controller => "vendors", :action => "index") %>
+      <%= link_to ("Krankenhäuser", :controller => "hospitals", :action => "index") %>
+      <%= link_to ("Addressen", :controller => "addresses", :action => "index") %>
+    </div>
+    <div id="content">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      bla
+    </div>
+  </div>
+</body>
+</html>

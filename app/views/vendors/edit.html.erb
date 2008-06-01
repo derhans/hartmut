@@ -1,0 +1,17 @@
+<h1>Editing vendor</h1>
+
+<%= error_messages_for :vendor %>
+
+<% form_for(@vendor) do |f| %>
+  <p>
+    <b>Address</b><br />
+    <%= f.text_field :address_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @vendor %> |
+<%= link_to 'Back', vendors_path %>

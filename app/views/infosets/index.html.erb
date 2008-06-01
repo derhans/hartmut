@@ -1,0 +1,22 @@
+<h1>Listing infosets</h1>
+
+<table>
+  <tr>
+    <th>Article</th>
+    <th>Vendor</th>
+  </tr>
+
+<% for infoset in @infosets %>
+  <tr>
+    <td><%=h infoset.article_id %></td>
+    <td><%=h infoset.vendor_id %></td>
+    <td><%= link_to 'Show', infoset %></td>
+    <td><%= link_to 'Edit', edit_infoset_path(infoset) %></td>
+    <td><%= link_to 'Destroy', infoset, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New infoset', new_infoset_path %>

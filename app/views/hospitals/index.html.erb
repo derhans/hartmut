@@ -1,0 +1,22 @@
+<h1>Listing hospitals</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>Name</th>
+  </tr>
+
+<% for hospital in @hospitals %>
+  <tr>
+    <td><%=h hospital.address_id %></td>
+    <td><%=h hospital.name %></td>
+    <td><%= link_to 'Show', hospital %></td>
+    <td><%= link_to 'Edit', edit_hospital_path(hospital) %></td>
+    <td><%= link_to 'Destroy', hospital, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New hospital', new_hospital_path %>

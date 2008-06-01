@@ -1,0 +1,22 @@
+<h1>Editing department</h1>
+
+<%= error_messages_for :department %>
+
+<% form_for(@department) do |f| %>
+  <p>
+    <b>Description</b><br />
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <b>Hospital</b><br />
+    <%= f.text_field :hospital_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @department %> |
+<%= link_to 'Back', departments_path %>

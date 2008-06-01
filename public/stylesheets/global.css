@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+}
+body {
+  background-color: #ddd;
+}
+#container {
+  width: 800px;
+  margin: 0 auto;
+}
+#header {
+  background-color: #006999;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+}
+#content {
+  margin-left: 150px;
+  border: 2px solid #006999;
+  padding: 10px;
+  background-color: #fff;
+  min-height: 200px;
+}
+#navigation {
+  float: left;
+  width: 120px;
+  border: 2px solid #006999;
+  padding: 10px;
+  background-color: #fff;
+}
+#footer {
+  clear: both;
+  margin: 0;
+  padding: 10px;
+}

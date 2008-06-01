@@ -1,0 +1,22 @@
+<h1>New department</h1>
+
+<%= error_messages_for :department %>
+
+<% form_for(@department) do |f| %>
+  <p>
+    <b>Description</b><br />
+    <%= f.text_field :description %>
+  </p>
+
+  <p>
+    <b>Hospital</b><br />
+    <%= f.collection_select :hospital_id, @hospitals, :id, :name %>
+    <%# f.select("department", "hospital_id", @hospitals.collect {|h| [h.name, h.id] }) %>
+  </p>
+
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', departments_path %>

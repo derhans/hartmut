@@ -1,0 +1,22 @@
+<h1>Editing hospital</h1>
+
+<%= error_messages_for :hospital %>
+
+<% form_for(@hospital) do |f| %>
+  <p>
+    <b>Address</b><br />
+    <%= f.text_field :address_id %>
+  </p>
+
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @hospital %> |
+<%= link_to 'Back', hospitals_path %>

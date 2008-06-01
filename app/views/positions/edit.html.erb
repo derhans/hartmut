@@ -1,0 +1,32 @@
+<h1>Editing position</h1>
+
+<%= error_messages_for :position %>
+
+<% form_for(@position) do |f| %>
+  <p>
+    <b>Order</b><br />
+    <%= f.text_field :order_id %>
+  </p>
+
+  <p>
+    <b>Article</b><br />
+    <%= f.text_field :article_id %>
+  </p>
+
+  <p>
+    <b>Quantity</b><br />
+    <%= f.text_field :quantity %>
+  </p>
+
+  <p>
+    <b>Status</b><br />
+    <%= f.text_field :status_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @position %> |
+<%= link_to 'Back', positions_path %>

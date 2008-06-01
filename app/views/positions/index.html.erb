@@ -1,0 +1,26 @@
+<h1>Listing positions</h1>
+
+<table>
+  <tr>
+    <th>Order</th>
+    <th>Article</th>
+    <th>Quantity</th>
+    <th>Status</th>
+  </tr>
+
+<% for position in @positions %>
+  <tr>
+    <td><%=h position.order_id %></td>
+    <td><%=h position.article_id %></td>
+    <td><%=h position.quantity %></td>
+    <td><%=h position.status_id %></td>
+    <td><%= link_to 'Show', position %></td>
+    <td><%= link_to 'Edit', edit_position_path(position) %></td>
+    <td><%= link_to 'Destroy', position, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New position', new_position_path %>

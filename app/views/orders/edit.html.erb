@@ -1,0 +1,22 @@
+<h1>Editing order</h1>
+
+<%= error_messages_for :order %>
+
+<% form_for(@order) do |f| %>
+  <p>
+    <b>Vendor</b><br />
+    <%= f.text_field :vendor_id %>
+  </p>
+
+  <p>
+    <b>Department</b><br />
+    <%= f.text_field :department_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @order %> |
+<%= link_to 'Back', orders_path %>

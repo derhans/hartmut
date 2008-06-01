@@ -1,0 +1,24 @@
+<p>
+  <b>Refnr:</b>
+  <%=h @article.refnr %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%=h @article.text %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%=h @article.price %>
+</p>
+
+<p>
+  <b>Unit:</b>
+  <%=h @article.unit_id %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

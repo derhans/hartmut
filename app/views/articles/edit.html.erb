@@ -1,0 +1,32 @@
+<h1>Editing article</h1>
+
+<%= error_messages_for :article %>
+
+<% form_for(@article) do |f| %>
+  <p>
+    <b>Refnr</b><br />
+    <%= f.text_field :refnr %>
+  </p>
+
+  <p>
+    <b>Text</b><br />
+    <%= f.text_field :text %>
+  </p>
+
+  <p>
+    <b>Price</b><br />
+    <%= f.text_field :price %>
+  </p>
+
+  <p>
+    <b>Unit</b><br />
+    <%= f.text_field :unit_id %>
+  </p>
+
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @article %> |
+<%= link_to 'Back', articles_path %>

@@ -1,0 +1,13 @@
+<p>
+  <b>Vendor:</b>
+  <%=h @order.vendor_id %>
+</p>
+
+<p>
+  <b>Department:</b>
+  <%=h @order.department_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
