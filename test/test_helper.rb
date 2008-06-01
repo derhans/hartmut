@@ -35,4 +35,17 @@ class Test::Unit::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  def valid_address_object(add_attributes={})
+    {
+      :street => "Testsraße",
+      :nr => "12b",
+      :zip => "12345",
+      :country => "Deutschland",
+      :city => "Teststadt",
+      :email => "test@test.de",
+      :tel => "0123/456789"
+    }.merge(add_attributes)
+  end
+
 end
