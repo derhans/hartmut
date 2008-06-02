@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
   # GET /orders/1.xml
   def show
     @order = Order.find(params[:id])
+    @positions = @order.positions
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +26,8 @@ class OrdersController < ApplicationController
   # GET /orders/new.xml
   def new
     @order = Order.new
+    @vendors = Vendor.find(:all)
+    @departments = Department.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +38,8 @@ class OrdersController < ApplicationController
   # GET /orders/1/edit
   def edit
     @order = Order.find(params[:id])
+    @vendors = Vendor.find(:all)
+    @departments = Department.find(:all)
   end
 
   # POST /orders

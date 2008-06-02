@@ -1,4 +1,4 @@
-<h1>Listing addresses</h1>
+<h1>Adressen</h1>
 
 <table>
   <tr>
@@ -20,13 +20,13 @@
     <td><%=h address.city %></td>
     <td><%=h address.email %></td>
     <td><%=h address.tel %></td>
-    <td><%= link_to 'Show', address %></td>
-    <td><%= link_to 'Edit', edit_address_path(address) %></td>
-    <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Anzeigen', address %></td>
+    <td><%= link_to 'Bearbeiten', edit_address_path(address) %></td>
+    <td><%= link_to 'Löschen', address, :confirm => 'Sind Sie sicher?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New address', new_address_path %>
+<%= link_to 'Adresse anlegen', new_address_path %>

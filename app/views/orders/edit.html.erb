@@ -1,16 +1,16 @@
-<h1>Editing order</h1>
+<h1>Bestellung bearbeiten</h1>
 
 <%= error_messages_for :order %>
 
 <% form_for(@order) do |f| %>
   <p>
-    <b>Vendor</b><br />
-    <%= f.text_field :vendor_id %>
+    <b>Lieferant</b><br />
+    <%= f.collection_select :vendor_id, @vendors, :id, :id %>
   </p>
 
   <p>
-    <b>Department</b><br />
-    <%= f.text_field :department_id %>
+    <b>Abteilung</b><br />
+    <%= f.collection_select :department_id, @departments, :id, :description %>
   </p>
 
   <p>

@@ -37,6 +37,7 @@ class DepartmentsController < ApplicationController
   # GET /departments/1/edit
   def edit
     @department = Department.find(params[:id])
+    @hospitals = Hospital.find(:all)
   end
 
   # POST /departments

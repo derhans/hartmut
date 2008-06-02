@@ -1,8 +1,31 @@
 <p>
-  <b>Address:</b>
+  <b>Address ID:</b>
   <%=h @vendor.address_id %>
 </p>
-
+<p>
+  <b>Straße:</b>
+  <%=h @vendor.address.street %>
+</p>
+<p>
+  <b>Hausnummer:</b>
+  <%=h @vendor.address.nr %>
+</p>
+<p>
+  <b>Postleitzahl:</b>
+  <%=h @vendor.address.zip %>
+</p>
+<p>
+  <b>Land:</b>
+  <%=h @vendor.address.country %>
+</p>
+<p>
+  <b>E-Mail:</b>
+  <%=h @vendor.address.email %>
+</p>
+<p>
+  <b>Telefon Nummer:</b>
+  <%=h @vendor.address.tel %>
+</p>
 
 <%= link_to 'Edit', edit_vendor_path(@vendor) %> |
 <%= link_to 'Back', vendors_path %>

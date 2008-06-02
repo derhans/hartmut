@@ -1,3 +1,4 @@
+<p><b>Kopf</b></p>
 <p>
   <b>Vendor:</b>
   <%=h @order.vendor_id %>
@@ -5,7 +6,29 @@
 
 <p>
   <b>Department:</b>
-  <%=h @order.department_id %>
+  <%=h @order.department.description %>
+</p>
+<br>
+<p>
+<b> Positionen</b>
+<table>
+  <tr>
+    <th>Positions-ID</th>
+    <th>Referenznummer Artikel</th>
+    <th>Artikel Beschreibung</th>
+    <th>Menge</th>
+    <th>Status</th>
+  </tr>
+<% for position in @positions %>
+  <tr>
+    <td><%=h position.id %></td>
+    <td><%=h position.article.refnr %></td>
+    <td><%=h position.article.text %></td>
+    <td><%=h position.quantity %></td>
+    <td><%=h position.status.description%></td>
+  </tr>
+<% end %>
+</table>
 </p>
 
 

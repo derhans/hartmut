@@ -1,11 +1,13 @@
-<h1>Listing articles</h1>
+<h1>Artikel Übersicht</h1>
 
 <table>
   <tr>
     <th>Refnr</th>
     <th>Text</th>
-    <th>Price</th>
-    <th>Unit</th>
+    <th>Preis</th>
+    <th></th>
+    <th>Einheit</th>
+    <th>Lieferant</th>
   </tr>
 
 <% for article in @articles %>
@@ -13,14 +15,16 @@
     <td><%=h article.refnr %></td>
     <td><%=h article.text %></td>
     <td><%=h article.price %></td>
-    <td><%=h article.unit_id %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>pro</td>
+    <td><%=h article.unit.name %></td>
+    <td><%=h article.infoset.vendor.id %></td>
+    <td><%#= link_to 'Show', article %></td>
+    <td><%= link_to 'Bearbeiten', edit_article_path(article) %></td>
+    <td><%= link_to 'Löschen', article, :confirm => 'Sind Sie sicher?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New article', new_article_path %>
+<%= link_to 'Artikel anlegen', new_article_path %>

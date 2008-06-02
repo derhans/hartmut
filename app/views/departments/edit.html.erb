@@ -1,22 +1,23 @@
-<h1>Editing department</h1>
+<h1>Abteilung bearbeiten</h1>
 
 <%= error_messages_for :department %>
 
 <% form_for(@department) do |f| %>
   <p>
-    <b>Description</b><br />
+    <b>Beschreibung</b><br />
     <%= f.text_field :description %>
   </p>
 
   <p>
-    <b>Hospital</b><br />
-    <%= f.text_field :hospital_id %>
+    <b>Krankenhaus</b><br />
+    <%= f.collection_select :hospital_id, @hospitals, :id, :name %>
+    <%# f.text_field :hospital_id %>
   </p>
 
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "Aktualisieren" %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @department %> |
-<%= link_to 'Back', departments_path %>
+<%#= link_to 'Show', @department %>
+<%= link_to 'Zurück', departments_path %>

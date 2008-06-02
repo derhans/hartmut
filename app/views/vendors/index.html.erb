@@ -8,13 +8,13 @@
 <% for vendor in @vendors %>
   <tr>
     <td><%=h vendor.address_id %></td>
-    <td><%= link_to 'Show', vendor %></td>
-    <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
-    <td><%= link_to 'Destroy', vendor, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Details anzeigen', vendor %></td>
+    <td><%= link_to 'Bearbeiten', edit_vendor_path(vendor) %></td>
+    <td><%= link_to 'Löschen', vendor, :confirm => 'Sind Sie sicher?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New vendor', new_vendor_path %>
+<%= link_to 'Lieferanten anlegen', new_vendor_path %>
