@@ -1,4 +1,16 @@
-<h1>Editing address</h1>
+<h1>Addresse bearbeiten</h1>
+<table>
+  <tr>
+    <th>Wird benutzt von Lieferant:</th>
+  </tr>
+<% for vendor in @vendors %>
+  <tr>
+    <td><%=h vendor.name %></td>
+    <td><%= link_to 'Lieferant anzeigen', vendor %>
+  </tr>
+<% end %>
+</table>
+<br>
 
 <%= error_messages_for :address %>
 

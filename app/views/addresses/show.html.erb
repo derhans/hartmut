@@ -1,3 +1,16 @@
+<h1>Addresse anzeigen</h1>
+<table>
+  <tr>
+    <th>Wird benutzt von Lieferant:</th>
+  </tr>
+<% for vendor in @vendors %>
+  <tr>
+    <td><%=h vendor.name %></td>
+    <td><%= link_to 'Lieferant anzeigen', vendor %>
+  </tr>
+<% end %>
+</table>
+<br>
 <p>
   <b>Street:</b>
   <%=h @address.street %>

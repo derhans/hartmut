@@ -9,7 +9,7 @@
 
 <% for order in @orders %>
   <tr>
-    <td><%=h order.vendor_id %></td>
+    <td><%=h order.vendor.name %></td>
     <td><%=h order.department.hospital.name %></td>
     <td><%=h order.department.description %></td>
     <td><%= link_to 'Anzeigen', order %></td>

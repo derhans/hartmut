@@ -25,6 +25,7 @@ class VendorsController < ApplicationController
   # GET /vendors/new.xml
   def new
     @vendor = Vendor.new
+    @addresses = Address.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class VendorsController < ApplicationController
   # GET /vendors/1/edit
   def edit
     @vendor = Vendor.find(params[:id])
+    @addresses = Address.find(:all)
   end
 
   # POST /vendors

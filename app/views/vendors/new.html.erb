@@ -1,15 +1,19 @@
-<h1>New vendor</h1>
+<h1>Lieferant anlegen</h1>
 
 <%= error_messages_for :vendor %>
 
 <% form_for(@vendor) do |f| %>
   <p>
-    <b>Address</b><br />
-    <%= f.text_field :address_id %>
+  <b>Name</b><br />
+  <%= f.text_field :name %>
+  </p>
+  <p>
+    <b>Adresse</b><br />
+    <%= f.collection_select :address_id, @addresses, :id, :id %> 
   </p>
 
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "Anlegen" %>
   </p>
 <% end %>
 

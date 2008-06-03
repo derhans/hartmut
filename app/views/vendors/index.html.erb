@@ -1,12 +1,14 @@
-<h1>Listing vendors</h1>
+<h1>Lieferanten</h1>
 
 <table>
   <tr>
-    <th>Address</th>
+    <th>Name</th>
+    <th>Adresse</th>
   </tr>
 
 <% for vendor in @vendors %>
   <tr>
+    <td><%=h vendor.name %>
     <td><%=h vendor.address_id %></td>
     <td><%= link_to 'Details anzeigen', vendor %></td>
     <td><%= link_to 'Bearbeiten', edit_vendor_path(vendor) %></td>

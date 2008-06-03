@@ -17,7 +17,7 @@
     <td><%=h article.price %></td>
     <td>pro</td>
     <td><%=h article.unit.name %></td>
-    <td><%=h article.infoset.vendor.id %></td>
+    <td><%=h article.infoset.vendor.name %></td>
     <td><%#= link_to 'Show', article %></td>
     <td><%= link_to 'Bearbeiten', edit_article_path(article) %></td>
     <td><%= link_to 'Löschen', article, :confirm => 'Sind Sie sicher?', :method => :delete %></td>

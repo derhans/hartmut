@@ -14,7 +14,7 @@ class AddressesController < ApplicationController
   # GET /addresses/1.xml
   def show
     @address = Address.find(params[:id])
-
+    @vendors = @address.vendors
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @address }
@@ -35,6 +35,7 @@ class AddressesController < ApplicationController
   # GET /addresses/1/edit
   def edit
     @address = Address.find(params[:id])
+    @vendors = @address.vendors
   end
 
   # POST /addresses
