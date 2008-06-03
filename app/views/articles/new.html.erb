@@ -1,4 +1,4 @@
-<h1>New article</h1>
+<h1>Artikel anlegen</h1>
 
 <%= error_messages_for :article %>
 
@@ -14,19 +14,20 @@
   </p>
 
   <p>
-    <b>Price</b><br />
+    <b>Preis</b><br />
     <%= f.text_field :price %>
   </p>
 
   <p>
-    <b>Unit</b><br />
-    <%= f.text_field :unit_id %>
+    <b>Einheit</b><br />
+    <%= f.collection_select :unit_id, @units, :id, :name %>
+    <%# f.text_field :unit_id %>
   </p>
 
 
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "Anlegen" %>
   </p>
 <% end %>
 
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Zurück', articles_path %>
