@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 13) do
+ActiveRecord::Schema.define(:version => 14) do
 
   create_table "addresses", :force => true do |t|
     t.string   "street"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 13) do
     t.integer  "status_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "pos"
   end
 
   create_table "statuses", :force => true do |t|

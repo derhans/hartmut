@@ -4,5 +4,6 @@ class VendorNameField < ActiveRecord::Migration
   end
 
   def self.down
+    remove_column :positions, :pos
   end
 end
