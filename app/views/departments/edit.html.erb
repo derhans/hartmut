@@ -13,11 +13,38 @@
     <%= f.collection_select :hospital_id, @hospitals, :id, :name %>
     <%# f.text_field :hospital_id %>
   </p>
-
   <p>
     <%= f.submit "Aktualisieren" %>
   </p>
-<% end %>
-
+      <% end %>
+  <br>
+  <b>Zugeordnete Artikel:</b>
+      <table>
+        <tr>
+          <th>Refnr</th>
+        </tr>
+        <% for article in @assigned_articles %>
+          <tr>
+            <td><%=h article.refnr %></td>
+	    <td><%= link_to "(remove)", :action => :remove_from_assignment, :department => @department, :article => article.id %></td>
+          </tr>
+        <% end %>
+      </table>
+      <br>
+        <p>
+          <b>Artikel hinzufügen:</b>
+	    <table>
+	      <tr>
+		<th>Refnr</th>
+	      </tr>
+          <% for to_assign in @articles %>
+	      <tr>
+		<td><%=h to_assign.refnr%></td>
+		<td><%= link_to "(add)", :action => :add_to_assignment, :department => @department, :article => to_assign.id %></td>
+	      </tr>
+          <% end %>
+	    </table>
+        </p>
+        <br>
 <%#= link_to 'Show', @department %>
 <%= link_to 'Zurück', departments_path %>

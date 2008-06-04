@@ -33,3 +33,13 @@ body {
   margin: 0;
   padding: 10px;
 }
+.notice {
+  border: 1px solid #008414;
+  color: #008414;
+  background-color: #D8FFBB;
+}
+.error {
+  border: 1px solid #990A0C;
+  color: #990A0C;
+  background-color: #FFA894;
+}

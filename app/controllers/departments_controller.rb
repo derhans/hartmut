@@ -38,6 +38,8 @@ class DepartmentsController < ApplicationController
   def edit
     @department = Department.find(params[:id])
     @hospitals = Hospital.find(:all)
+    @assigned_articles = @department.articles
+    @articles = Article.find(:all)
   end
 
   # POST /departments
@@ -84,5 +86,26 @@ class DepartmentsController < ApplicationController
       format.html { redirect_to(departments_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def add_to_assignment
+    #@article = params[:article]
+    #@department = params[:department]
+    @department = Department.find_by_id(params[:department])
+    article = Article.find(params[:article])
+    #article = Article.new
+    @department.articles << article
+    redirect_to :action => "edit", :id => @department
+  end
+
+  def remove_from_assignment
+    department = Department.find(params[:department])
+    article = Article.find(params[:article])
+    department.articles.delete(article)
+    redirect_to :action => "edit", :id => department
+  end
+  private
+  def find_assignment
+    session[:assignment] ||= Assignment.new
   end
 end
